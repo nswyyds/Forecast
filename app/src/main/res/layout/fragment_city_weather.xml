@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/out_layout">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frag_layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/total_Detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/frag_center_layout">
+            <TextView
+                android:id="@+id/frag_tv_city"
+                style="@style/todaytext"
+                android:text="城市名称"
+                android:textSize="40sp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/frag_tv_condition"
+                app:layout_constraintTop_toBottomOf="parent"/>
+            <TextView
+                android:id="@+id/frag_tv_condition"
+                style="@style/todaytext"
+                android:text="晴"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/frag_tv_date"
+                app:layout_constraintTop_toBottomOf="@id/frag_tv_city"/>
+            <TextView
+                android:id="@+id/frag_tv_date"
+                android:text="2022-4-30"
+                android:layout_below="@id/frag_tv_condition"
+                android:layout_marginTop="20dp"
+                style="@style/todaytext"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/frag_tv_wind"
+                app:layout_constraintTop_toBottomOf="@id/frag_tv_condition"/>
+            <TextView
+                android:id="@+id/frag_tv_wind"
+                style="@style/todaytext"
+                android:layout_below="@id/frag_tv_date"
+                android:layout_marginTop="5dp"
+                android:text="东北风3~4级"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/frag_tv_temprange"
+                app:layout_constraintTop_toBottomOf="@id/frag_tv_date"/>
+            <TextView
+                android:id="@+id/frag_tv_temprange"
+                style="@style/todaytext"
+                android:text="9~-1℃"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/frag_tv_wind"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- 用于显示未来七天的天气情况-->
+        <LinearLayout
+            android:id="@+id/frag_center_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            app:layout_constraintTop_toBottomOf="@id/total_Detail"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
